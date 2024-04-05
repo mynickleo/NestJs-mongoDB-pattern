@@ -24,6 +24,7 @@ export class UsersController{
         if(!isValid) throw new HttpException("Invalid ID", 404);
 
         const findUser = await this.userService.getUserById(id);
+        console.log(findUser)
         if(!findUser) throw new HttpException("User not found", 404);
         return findUser;
     }
